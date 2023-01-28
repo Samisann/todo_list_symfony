@@ -14,6 +14,30 @@
         {% endblock %}
     </head>
     <body>
+        <header class="d-flex col-8 mx-auto flex-wrap justify-content-center  py-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+<img src="{{ asset('build/images/logo.png') }}" alt="logo">
+      </a>
+
+ 
+
+      <div class=" text-end">
+
+
+                {% if app.user %}
+                    Mon compte <small>({{ app.user.firstname }})</small>
+                {% else %}
+           
+              {# <a href="{{ path('app_login') }}"><button type="button" class="btn btn-outline-primary me-2">Login</button></a>
+  <a href="{{ path('app_register') }}"><button type="button" class="btn btn-primary">Sign-up</button></a> #}
+  
+                {% endif %}
+
+
+
+
+      </div>
+    </header>
         {% block body %}{% endblock %}
     </body>
 </html>
